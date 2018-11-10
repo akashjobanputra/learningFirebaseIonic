@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+// import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
 
 @NgModule({
   imports: [
@@ -19,5 +20,6 @@ import { HomePage } from './home.page';
     ])
   ],
   declarations: [HomePage]
+  // schemas: [NO_ERRORS_SCHEMA]
 })
 export class HomePageModule {}
