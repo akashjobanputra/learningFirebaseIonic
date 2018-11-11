@@ -11,7 +11,7 @@ import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FIREBASE_CONFIG } from './firebase.credentials';
-import { ShoppingListService } from './services/shopping-list/shopping-list.service';\
+import { ShoppingListService } from './services/shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [AppComponent],
