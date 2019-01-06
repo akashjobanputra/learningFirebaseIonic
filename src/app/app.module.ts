@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { ShoppingListService } from './services/shopping-list/shopping-list.service';
+import { ToastService } from './src/app/services/toast.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +29,8 @@ import { ShoppingListService } from './services/shopping-list/shopping-list.serv
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     NavController,
-    ShoppingListService
+    ShoppingListService,
+    ToastService
   ],
   bootstrap: [AppComponent]
 })

@@ -3,7 +3,6 @@ import { ShoppingListService } from '../services/shopping-list/shopping-list.ser
 import { Observable } from 'rxjs';
 import { Item } from '../../models/item/item.model';
 import { map } from "rxjs/operators";
-// import { AddShoppingItemPage } from '../add-shopping-item/add-shopping-item.page';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +10,6 @@ import { map } from "rxjs/operators";
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  /* AddShoppingItemPage: any;
-  constructor() {
-    this.AddShoppingItemPage = AddShoppingItemPage;
-  } */
 
   shoppingList$: Observable<Item[]>;
 

@@ -1,8 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AngularFireDatabase } from "angularfire2/database";
 import { Item } from "../../../models/item/item.model";
-import { map } from "rxjs/operators";
-import { Observable } from "rxjs";
 
 @Injectable()
 export class ShoppingListService {
@@ -36,10 +34,4 @@ export class ShoppingListService {
     updateItem(item: Item) {
         return this.shoppingListRef.update(item.key, item);
     }
-}
-export const snapshotToObject = snapshot => {
-    let item = snapshot.val();
-    item.key = snapshot.key;
-
-    return item;
 }

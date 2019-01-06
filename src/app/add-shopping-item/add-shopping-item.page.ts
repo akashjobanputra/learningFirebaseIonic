@@ -3,6 +3,7 @@ import { Item } from '../../models/item/item.model';
 import { ShoppingListService } from '../services/shopping-list/shopping-list.service';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { ToastService } from '../src/app/services/toast.service';
 // import { NavController, NavParams, Nav } from '@ionic/angular';
 
 @Component({
@@ -19,17 +20,16 @@ export class AddShoppingItemPage {
     price: undefined
   };
 
-  constructor(public navCtrl: NavController, public router: Router, private shopping: ShoppingListService) { }
+  constructor(public navCtrl: NavController,
+    public router: Router,
+    private shopping: ShoppingListService,
+    private toast: ToastService) { }
 
   addItem(item: Item) {
     this.shopping.addItem(item).then(ref => {
       console.log(ref.key);
-      // this.router.
+      this.toast.presentToast(`${item.name} added!`);
       this.navCtrl.navigateBack('/home')
     })
   }
-
-  // ngOnInit() {
-  // }
-
 }

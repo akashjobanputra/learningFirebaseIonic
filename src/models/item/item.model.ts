@@ -1,6 +1,6 @@
 export interface Item {
-    key?: String;
-    name: String;
+    key?: string;
+    name: string;
     quantity: number;
     price: number;
 }
