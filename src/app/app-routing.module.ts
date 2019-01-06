@@ -5,7 +5,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'AddShoppingItem', loadChildren: './add-shopping-item/add-shopping-item.module#AddShoppingItemPageModule' },
-  { path: 'EditShoppingItem', loadChildren: './edit-shopping-item/edit-shopping-item.module#EditShoppingItemPageModule' },
+  { path: 'EditShoppingItem/:id', loadChildren: './edit-shopping-item/edit-shopping-item.module#EditShoppingItemPageModule' },
 ];
 
 @NgModule({

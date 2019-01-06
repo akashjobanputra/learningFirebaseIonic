@@ -1,9 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>EditShoppingItem</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>{{item.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input [(ngModel)]="item.name" placeholder="iPad Pro"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Quantity</ion-label>
+    <ion-input [(ngModel)]="item.quantity" type="number" placeholder="1"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Price</ion-label>
+    <ion-input [(ngModel)]="item.price" type="number" placeholder="700"></ion-input>
+  </ion-item>
+  
+  <ion-button block clear (click)="saveItem(item)">Save</ion-button>
 
 </ion-content>
