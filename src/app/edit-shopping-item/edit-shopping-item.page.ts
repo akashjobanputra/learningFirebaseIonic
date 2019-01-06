@@ -4,7 +4,8 @@ import { ShoppingListService } from '../services/shopping-list/shopping-list.ser
 import { Item } from '../../models/item/item.model';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { NavController } from '@ionic/angular';
-import { ToastService } from '../src/app/services/toast.service';
+import { ToastService } from '../services/toast/toast.service';
+import { snapshotToObject } from "../utils/common";
 
 @Component({
   selector: 'app-edit-shopping-item',
@@ -40,10 +41,12 @@ export class EditShoppingItemPage implements OnInit {
         this.navCtrl.goBack();
       })
   }
-}
 
-export const snapshotToObject = snapshot => {
-  let item = snapshot.val();
-  item.key = snapshot.key;
-  return item;
+  removeItem(item: Item) {
+    this.shopping.removeItem(item)
+    .then(() => {
+      this.toast.presentToast(`${this.item.name} deleted!`);
+      this.navCtrl.goBack();
+    })
+  }
 }

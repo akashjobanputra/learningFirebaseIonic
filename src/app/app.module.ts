@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { ShoppingListService } from './services/shopping-list/shopping-list.service';
-import { ToastService } from './src/app/services/toast.service';
+import { ToastService } from './services/toast/toast.service';
 
 @NgModule({
   declarations: [AppComponent],

@@ -3,7 +3,7 @@ import { Item } from '../../models/item/item.model';
 import { ShoppingListService } from '../services/shopping-list/shopping-list.service';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { ToastService } from '../src/app/services/toast.service';
+import { ToastService } from '../services/toast/toast.service';
 // import { NavController, NavParams, Nav } from '@ionic/angular';
 
 @Component({

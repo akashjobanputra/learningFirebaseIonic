@@ -3,6 +3,7 @@ import { ShoppingListService } from '../services/shopping-list/shopping-list.ser
 import { Observable } from 'rxjs';
 import { Item } from '../../models/item/item.model';
 import { map } from "rxjs/operators";
+import { snapshotToObject } from '../utils/common';
 
 @Component({
   selector: 'app-home',
@@ -17,9 +18,7 @@ export class HomePage {
     this.shoppingList$ = this.shopping
       .getShoppingList()
       .snapshotChanges().pipe(map(changes => {
-        return changes.map(c => ({
-          key: c.payload.key, ...c.payload.val()
-        }))
+        return changes.map(c => (snapshotToObject(c.payload)))
       }
       ))
   }
